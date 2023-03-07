@@ -5,7 +5,8 @@ import java.util.Scanner;
 public class ScannerTest {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String a = scanner.next();
+        String a = scanner.nextLine();
+        a = a.trim();
         System.out.println(a);
         System.out.println(a.length());
         System.out.println("first letter" + a.charAt(0));
