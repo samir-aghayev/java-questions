@@ -12,7 +12,7 @@ public class ConditionalStatement_2 {
         } else if (x <= 7) {
             y = x * x - 3 * x;
         } else {
-            y = (long) x * x * x + 2 * x;
+            y = x * x * x + 2 * x;
         }
         System.out.println(y);
     }
