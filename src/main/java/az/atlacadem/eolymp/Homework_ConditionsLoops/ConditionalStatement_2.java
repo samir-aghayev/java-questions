@@ -6,11 +6,11 @@ public class ConditionalStatement_2 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int x = scanner.nextInt();
-        int y = 0;
+        long y;
         if (x >= 10) {
-            y = (x * x * x) + (5 * x);
+            y = ((long)x * x * x) + (5 * x);
         } else {
-            y = (x * x) - (2 * x) + 4;
+            y = ((long)x * x) - (2 * x) + 4;
         }
         System.out.println(y);
     }
