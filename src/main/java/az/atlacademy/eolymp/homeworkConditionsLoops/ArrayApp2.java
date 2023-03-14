@@ -18,7 +18,7 @@ public class ArrayApp2 {
                 max = array[i];
                 maxIndex = i;
             }
-            if (array[i] <= min) {
+            if (array[i] < min) {
                 min = array[i];
                 minIndex = i;
             }
