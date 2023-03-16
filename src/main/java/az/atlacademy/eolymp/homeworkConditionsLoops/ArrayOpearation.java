@@ -2,7 +2,7 @@ package az.atlacademy.eolymp.homeworkConditionsLoops;
 
 import java.util.Scanner;
 
-public class ArrayApp2 {
+public class ArrayOpearation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int[] array = new int[scanner.nextInt()];
