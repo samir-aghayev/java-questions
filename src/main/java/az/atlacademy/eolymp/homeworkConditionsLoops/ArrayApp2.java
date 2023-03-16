@@ -13,6 +13,8 @@ public class ArrayApp2 {
         int maxIndex = 0;
         int min = array[0];
         int minIndex = 0;
+        int sum = 0;
+        int prod = 1;
         for (int i = 0; i < array.length; i++) {
             if (array[i] > max) {
                 max = array[i];
@@ -22,8 +24,13 @@ public class ArrayApp2 {
                 min = array[i];
                 minIndex = i;
             }
+            sum += array[i];
+            prod *= array[i];
         }
+
         System.out.println("Max index: " + maxIndex + ", max value: " + max);
         System.out.println("Min index: " + minIndex + ", min value: " + min);
+        System.out.println("Sum of digit: " + sum);
+        System.out.println("Prod of digit: " + prod);
     }
 }
