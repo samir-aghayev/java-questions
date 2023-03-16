@@ -27,10 +27,10 @@ public class ArrayApp2 {
             sum += array[i];
             prod *= array[i];
         }
-
         System.out.println("Max index: " + maxIndex + ", max value: " + max);
         System.out.println("Min index: " + minIndex + ", min value: " + min);
         System.out.println("Sum of digit: " + sum);
         System.out.println("Prod of digit: " + prod);
+        System.out.println("Avarage of digit: " + (sum/ array.length));
     }
 }
