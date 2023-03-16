@@ -31,6 +31,6 @@ public class ArrayOpearation {
         System.out.println("Min index: " + minIndex + ", min value: " + min);
         System.out.println("Sum of digit: " + sum);
         System.out.println("Prod of digit: " + prod);
-        System.out.println("Avarage of digit: " + (sum/ array.length));
+        System.out.println("Avarage of digit: " + ((double)sum / array.length));
     }
 }
