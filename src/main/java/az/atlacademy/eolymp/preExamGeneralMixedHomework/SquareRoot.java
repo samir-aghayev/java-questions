@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class SquareRoot {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        double sum = 0;
-        while (n > 0) {
-            sum += (n % 10);
-            n /= 10;
+        while (scanner.hasNext()) {
+            int a = scanner.nextInt();
+            int b = scanner.nextInt();
+            System.out.println(a + b);
         }
-        System.out.printf("%.3f", Math.sqrt(sum));
+        scanner.close();
     }
 }
