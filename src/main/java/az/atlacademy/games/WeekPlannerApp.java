@@ -21,7 +21,7 @@ public class WeekPlannerApp {
             if (newTask.equals("no")) {
                 break;
             } else if (newTask.equals("yes")) {
-                System.out.println("input new tasks for " + choice);
+                System.out.println("input new tasks for " + choice.substring(0, 1).toUpperCase() + choice.substring(1));
                 newTask = scanner.next();
                 for (int i = 0; i < scedule.length; i++) {
                     if (scedule[i][0].toLowerCase().equals(choice)) {
