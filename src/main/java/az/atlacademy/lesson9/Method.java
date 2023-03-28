@@ -1,8 +1,12 @@
 package az.atlacademy.lesson9;
 
+import java.util.Scanner;
+
 public class Method {
     public static void main(String[] args) {
-        printDigit(1234);
+        Scanner scanner=new Scanner(System.in);
+        int n=scanner.nextInt();
+        printDigit(n);
     }
 
     public static void printDigit(int n) {
