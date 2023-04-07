@@ -1,6 +1,7 @@
 package az.atlacademy.aHappyFamilyMiniProject;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Pet {
     private String species;
@@ -60,5 +61,19 @@ public class Pet {
 
     public String[] getHabits() {
         return habits;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Pet pet)) return false;
+        return getAge() == pet.getAge() && getTrickLevel() == pet.getTrickLevel() && Objects.equals(getSpecies(), pet.getSpecies()) && Objects.equals(getNickname(), pet.getNickname()) && Arrays.equals(getHabits(), pet.getHabits());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getSpecies(), getNickname(), getAge(), getTrickLevel());
+        result = 31 * result + Arrays.hashCode(getHabits());
+        return result;
     }
 }
