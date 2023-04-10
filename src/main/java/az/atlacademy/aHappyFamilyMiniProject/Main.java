@@ -9,12 +9,10 @@ public class Main {
         Human mother = new Human("Tehmine", "Aliyeva", 40);
         Human father = new Human("Zaur", "Aliyeva", 42);
         String[][] schedule = fillSchedule();
-        Human son = new Human("Veli", "Ahmedov", 96, 25, cat, mother, father, schedule);
+        Human son = new Human("Veli", "Ahmedov", 96, 25, schedule);
         System.out.println(mother.toString());
         System.out.println(father.toString());
         System.out.println(son.toString());
-
-
     }
 
     public static String[][] fillSchedule() {

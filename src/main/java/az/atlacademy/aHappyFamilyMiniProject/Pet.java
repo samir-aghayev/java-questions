@@ -39,8 +39,7 @@ public class Pet {
 
     @Override
     public String toString() {
-        return species + "{nickname= '" + nickname + "', age = " + age + ", trickLevel = " + trickLevel
-                + ", habits =" + Arrays.toString(habits) + "}";
+        return "%s{nickname= '%s', age = %d, trickLevel = %d, habits =%s}".formatted(species, nickname, age, trickLevel, Arrays.toString(habits));
     }
 
     public String getSpecies() {
