@@ -10,10 +10,10 @@ public class Pet {
     private int trickLevel;    //1-100
     private String[] habits;
 
-    Pet() {
+    public Pet() {
     }
 
-    Pet(String nickname) {
+    public Pet(String nickname) {
         this.nickname = nickname;
     }
 
