@@ -8,8 +8,8 @@ public class Human {
     private String surname;
     private int year;
     private int iq; //1-100
-
     private String[][] schedule;
+    Family family;
 
     public Human() {
     }
@@ -31,13 +31,7 @@ public class Human {
 
     @Override
     public String toString() {
-        return "Human{" +
-                "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                ", year=" + year +
-                ", iq=" + iq +
-                ", schedule=" + Arrays.toString(schedule) +
-                '}';
+        return "Human{name='%s', surname='%s', year=%d, iq=%d, schedule=%s}".formatted(name, surname, year, iq, Arrays.toString(schedule));
     }
 
     public String getName() {
