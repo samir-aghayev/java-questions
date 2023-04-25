@@ -1,6 +1,6 @@
 package az.atlacademy.polimorfizm;
 
-public class Skuter {
+public class Skuter extends Car{
     public Skuter() {
     }
 

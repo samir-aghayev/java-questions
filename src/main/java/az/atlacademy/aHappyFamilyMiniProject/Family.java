@@ -1,6 +1,7 @@
 package az.atlacademy.aHappyFamilyMiniProject;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 public class Family {
     private final Human mother;
@@ -20,6 +21,11 @@ public class Family {
         System.out.println("Hello, " + pet);
     }
 
+    public void describePet() {
+        System.out.println("I have a" + pet.getSpecies() + ", he is " + pet.getAge() +
+                " years old, he is" + ((pet.getTrickLevel() > 50) ? "very sly" : "almost not sly"));
+    }
+
     public void addChild(Human child) {
         familyCounter++;
         Human[] temp = new Human[familyCounter - 2];
@@ -29,6 +35,7 @@ public class Family {
         temp[temp.length - 1] = child;
         children = temp;
     }
+
 
     public boolean deleteChild(Human child) {
         int index = -1;
@@ -42,7 +49,7 @@ public class Family {
             familyCounter--;
             Human[] temp = new Human[familyCounter - 2];
             int count = 0;
-            for (int i = 0; i < temp.length; i++) {
+            for (int i = 0; i < children.length; i++) {
                 if (index != i) {
                     temp[count] = children[i];
                     count++;
@@ -50,15 +57,10 @@ public class Family {
             }
             children = temp;
             return true;
-        } else {
-            return false;
         }
+        return false;
     }
 
-    public void describePet() {
-        System.out.println("I have a" + pet.getSpecies() + ", he is " + pet.getAge() +
-                " years old, he is" + ((pet.getTrickLevel() > 50) ? "very sly" : "almost not sly"));
-    }
 
     public Human getMother() {
         return mother;
@@ -72,10 +74,6 @@ public class Family {
         return pet;
     }
 
-    public void setPet(Pet pet) {
-        this.pet = pet;
-    }
-
     public Human[] getChildren() {
         return children;
     }
@@ -84,12 +82,22 @@ public class Family {
         return familyCounter;
     }
 
-    public void setFamilyCounter(int familyCounter) {
-        this.familyCounter = familyCounter;
+    @Override
+    public String toString() {
+        return "Family{mother=%s, father=%s, children=%s, pet=%s, familyCounter=%d}".formatted(mother, father, Arrays.toString(children), pet, familyCounter);
     }
 
     @Override
-    public String toString() {
-        return "Family{mother=%s, father=%s, children=%s, pet=%s}".formatted(mother, father, Arrays.toString(children), pet);
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Family family)) return false;
+        return getFamilyCounter() == family.getFamilyCounter() && Objects.equals(getMother(), family.getMother()) && Objects.equals(getFather(), family.getFather()) && Arrays.equals(getChildren(), family.getChildren());
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(getMother(), getFather(), getPet(), getFamilyCounter());
+        result = 31 * result + Arrays.hashCode(getChildren());
+        return result;
     }
 }

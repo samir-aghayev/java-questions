@@ -10,15 +10,7 @@ public class ShapeApp {
         call(square);
     }
 
-    public static void call(Circle circle) {
-        circle.print();
-    }
-
-    public static void call(Rectangle rectangle) {
-        rectangle.print();
-    }
-
-    public static void call(Square square) {
-        square.print();
+    public static void call(Shape shape) {
+        shape.print();
     }
 }

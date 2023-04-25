@@ -1,10 +1,12 @@
 package az.atlacademy.aHappyFamilyMiniProject;
 
+import az.atlacademy.aHappyFamilyMiniProject.enums.Species;
+
 import java.util.Arrays;
 import java.util.Objects;
 
 public class Pet {
-    private String species;
+    private Species species;
     private String nickname;
     private int age;
     private int trickLevel;    //1-100
@@ -17,7 +19,7 @@ public class Pet {
         this.nickname = nickname;
     }
 
-    public Pet(String species, String nickname, int age, int trickLevel, String[] habits) {
+    public Pet(Species species, String nickname, int age, int trickLevel, String[] habits) {
         this.species = species;
         this.nickname = nickname;
         this.age = age;
@@ -42,7 +44,7 @@ public class Pet {
         return "%s{nickname= '%s', age = %d, trickLevel = %d, habits =%s}".formatted(species, nickname, age, trickLevel, Arrays.toString(habits));
     }
 
-    public String getSpecies() {
+    public Species getSpecies() {
         return species;
     }
 
@@ -61,6 +63,7 @@ public class Pet {
     public String[] getHabits() {
         return habits;
     }
+
 
     @Override
     public boolean equals(Object o) {

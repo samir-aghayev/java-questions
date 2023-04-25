@@ -1,11 +1,30 @@
 package az.atlacademy.enums;
 
 public enum Month {
-    January(31), February(28), March(31), April(30), May(31), June(30), July(31), August(31),
-    September(30), October(31), November(30), December(31);
-    private final int monthDay;
+    January(31, "Winter"),
+    February(28, "Winter"),
+    March(31, "Spring"),
+    April(30, "Spring"),
+    May(31, "Spring"),
+    June(30, "Summer"),
+    July(31, "Summer"),
+    August(31, "Summer"),
+    September(30, "Autumn"),
+    October(31, "Autumn"),
+    November(30, "Autumn"),
+    December(31, "Winter");
 
-    Month(int monthDay) {
+    private final int monthDay;
+    private final String season;
+
+    Month(int monthDay, String season) {
         this.monthDay = monthDay;
+        this.season = season;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Month.April.monthDay);
+        System.out.println(Month.April.season);
+        System.out.println(Month.August);
     }
 }
