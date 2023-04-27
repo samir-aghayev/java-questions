@@ -1,11 +1,11 @@
-package az.atlacademy.aHappyFamilyMiniProject;
+package az.atlacademy.aHappyFamilyMiniProject.animals;
 
 import az.atlacademy.aHappyFamilyMiniProject.enums.Species;
 
 import java.util.Arrays;
 import java.util.Objects;
 
-public class Pet {
+abstract class Pet {
     private Species species;
     private String nickname;
     private int age;
@@ -31,13 +31,7 @@ public class Pet {
         System.out.println("I am eating");
     }
 
-    public void respond() {
-        System.out.println("Hello, owner. I am -" + nickname + ". I miss you!");
-    }
-
-    public void foul() {
-        System.out.println("I need to cover it up");
-    }
+    public abstract void respond();
 
     @Override
     public String toString() {

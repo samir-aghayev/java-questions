@@ -1,5 +1,7 @@
 package az.atlacademy.aHappyFamilyMiniProject;
 
+import az.atlacademy.aHappyFamilyMiniProject.animals.Pet;
+
 import java.util.Arrays;
 import java.util.Objects;
 

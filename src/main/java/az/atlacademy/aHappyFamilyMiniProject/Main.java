@@ -1,5 +1,6 @@
 package az.atlacademy.aHappyFamilyMiniProject;
 
+import az.atlacademy.aHappyFamilyMiniProject.animals.Pet;
 import az.atlacademy.aHappyFamilyMiniProject.enums.DayOfWeek;
 import az.atlacademy.aHappyFamilyMiniProject.enums.Species;
 
