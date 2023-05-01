@@ -11,5 +11,6 @@ public class CircleTest {
             a.printStackTrace();
             System.out.println(a.getMessage());
         }
+        System.out.println(Circle.getObjectCounter());
     }
 }

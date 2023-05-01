@@ -1,7 +1,7 @@
 package az.atlacademy.invalidRadius;
 
 public class Circle {
-    private static int numberOfObject = 0;
+    private static int objectCounter = 0;
     private double radius;
 
 
@@ -11,11 +11,11 @@ public class Circle {
 
     public Circle(double radius) throws InvalidRadiusException {
         setRadius(radius);
-        numberOfObject++;
+        objectCounter++;
     }
 
-    public static int getNumberOfObject() {
-        return numberOfObject;
+    public static int getObjectCounter() {
+        return objectCounter;
     }
 
     public double getRadius() {
