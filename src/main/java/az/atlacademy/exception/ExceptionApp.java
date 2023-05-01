@@ -5,19 +5,15 @@ import java.util.Scanner;
 public class ExceptionApp {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        String input = scanner.next();
-        int inputNum = 0;
-        try {
-            inputNum = Integer.parseInt(input);
-        } catch (NumberFormatException numberFormatException) {
-            System.err.println("Xeta bas verdi");
+        while (true) {
+            String input = scanner.next();
+            try {
+                int inputNum = Integer.parseInt(input);
+                System.out.println(inputNum * 5);
+                break;
+            } catch (NumberFormatException e) {
+                System.err.println("Exception, Please try again");
+            }
         }
-
-        int reverse = 0;
-        while (inputNum > 0) {
-            reverse = reverse * 10 + inputNum % 10;
-            inputNum /= 10;
-        }
-        System.out.println(reverse);
     }
 }
