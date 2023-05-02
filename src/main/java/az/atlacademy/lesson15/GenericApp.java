@@ -9,6 +9,9 @@ public class GenericApp {
 
         String b = null;
         System.out.println(checkName(b));
+
+        String c = "Hello World";
+        System.out.println(checkName(c));
     }
 
     public static Optional<String> checkName(String s) {
