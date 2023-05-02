@@ -9,6 +9,6 @@ public class GenericApp {
     }
 
     public static Optional<String> checkName(String s) {
-        return (s.isEmpty()) ? Optional.empty() : Optional.of(s);
+        return (s == null || s.isEmpty()) ? Optional.empty() : Optional.of(s);
     }
 }
