@@ -6,6 +6,9 @@ public class GenericApp {
     public static void main(String[] args) {
         String a = "";
         System.out.println(checkName(a));
+
+        String b = null;
+        System.out.println(checkName(b));
     }
 
     public static Optional<String> checkName(String s) {
