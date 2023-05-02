@@ -1,7 +1,5 @@
 package az.atlacademy.lesson15;
 
-import az.atlacademy.birthday.InvalidBirthdayException;
-
 import java.time.LocalDate;
 
 public class ExceptionTest2 {
@@ -13,6 +11,7 @@ public class ExceptionTest2 {
 
         Integer a = 5;
         method(a);
+        System.out.println(a.toString());
         a = null;
         method(a);
 
@@ -22,9 +21,11 @@ public class ExceptionTest2 {
         method(b);
     }
 
-    public static <E> void method(E s) {
+    public static <E> E method(E s) {
         if (s == null) {
-            throw new InvalidBirthdayException("Invalid input");
+            throw new NullPointerException("Invalid input");
+        }else{
+            return s;
         }
     }
 }
