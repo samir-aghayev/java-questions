@@ -13,6 +13,8 @@ public class PersonApp {
                 new Person(5, "Ali", 43, 675.48),
         };
         System.out.println(Arrays.toString(people));
+        Arrays.sort(people, new DefaultComparatorPerson());
+        System.out.println(Arrays.toString(people));
         Arrays.sort(people, new Comparator<Person>() {
             @Override
             public int compare(Person o1, Person o2) {
