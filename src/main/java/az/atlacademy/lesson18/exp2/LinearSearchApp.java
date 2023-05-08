@@ -14,7 +14,7 @@ public class LinearSearchApp {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         Optional<Integer> integer = search(numbers, n);
-
+        System.out.println(integer.isEmpty());
     }
 
     public static <T> Optional search(T[] a, T b) {
