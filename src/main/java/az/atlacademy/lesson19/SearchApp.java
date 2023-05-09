@@ -15,7 +15,7 @@ public class SearchApp {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
 
-        Optional<Integer> a = search(n, numbers);
+        Optional<Integer> a = linearSearch(n, numbers);
         a.ifPresent(new Consumer<Integer>() {
             @Override
             public void accept(Integer integer) {
@@ -30,7 +30,7 @@ public class SearchApp {
         System.out.println(a);
     }
 
-    private static <T> Optional<Integer> search(T n, T[] numbers) {
+    private static <T> Optional<Integer> linearSearch(T n, T[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             if (n.equals(numbers[i])) {
                 return Optional.of(i);
