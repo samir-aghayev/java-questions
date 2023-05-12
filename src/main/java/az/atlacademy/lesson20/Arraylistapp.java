@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Arraylistapp {
     public static void main(String[] args) {
-        ArrayList<Integer> num = new ArrayList<>();
+        ArrayList<Integer> nums = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            num.add((int) (Math.random() * 100));
+            nums.add((int) (Math.random() * 100));
         }
-        System.out.println(num);
+        System.out.println(nums);
 
-        num.sort(Integer::compareTo);
-        System.out.println(num);
+        nums.sort(Integer::compareTo);
+        System.out.println(nums);
 
-        num.add(num.size() - 1, 15);
-        System.out.println(num);
+        nums.add(nums.size(), 15);
+        System.out.println(nums);
 
-        System.out.println(num.contains(15));
-        System.out.println(num.get(0));
-        System.out.println(num.isEmpty());
-        num.clear();
-        System.out.println(num);
+        System.out.println(nums.contains(15));
+        System.out.println(nums.get(0));
+        System.out.println(nums.isEmpty());
+        nums.clear();
+        System.out.println(nums);
     }
 }
