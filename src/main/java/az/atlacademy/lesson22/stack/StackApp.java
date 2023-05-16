@@ -2,29 +2,36 @@ package az.atlacademy.lesson22.stack;
 
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Optional;
 
 public class StackApp {
-    private static final Deque<OperationEnum> stack = new LinkedList<>();
+    private static final Deque<Operation> stack = new LinkedList<>();
 
     public static void main(String[] args) {
-        doOperations();
-        doOperations();
-        doOperations();
-        doOperations();
+        doOperation();
+        System.out.println(stack);
+        doOperation();
+        System.out.println(stack);
+        doOperation();
+        System.out.println(stack);
+        doOperation();
         System.out.println(stack);
         ctrlZ();
         System.out.println(stack);
     }
 
-    public static String doOperations() {
-        int random = (int) (Math.random() * OperationEnum.values().length);
-        stack.add(OperationEnum.values()[random]);
+    public static String doOperation() {
+        int random = (int) (Math.random() * Operation.values().length);
+        stack.add(Operation.values()[random]);
         return stack.peek().toString();
     }
 
-    public static String ctrlZ() {
-        OperationEnum operationEnum = stack.peek();
-        stack.poll();
-        return operationEnum.toString();
+    public static Optional<Operation> ctrlZ() {
+        if (!stack.isEmpty()) {
+            Operation operationEnum = stack.peek();
+            stack.poll();
+            return Optional.of(operationEnum);
+        }
+        return Optional.empty();
     }
 }

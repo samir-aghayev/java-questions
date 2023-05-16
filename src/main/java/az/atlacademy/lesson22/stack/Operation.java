@@ -1,6 +1,6 @@
 package az.atlacademy.lesson22.stack;
 
-public enum OperationEnum {
+public enum Operation {
     UNDO,
     REDO,
     DELETE,
