@@ -14,5 +14,11 @@ public class FunctionalProgrammingExamplesApp {
                 }
             }
         };
+        Consumer<Collection<Person>> listPerson2 = people -> {
+            Object[] array = people.toArray();
+            for (int i = 0; i < people.size(); i++) {
+                System.out.println(array[i]);
+            }
+        };
     }
 }
