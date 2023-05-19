@@ -7,7 +7,7 @@ import java.util.function.Function;
 
 public class StreamApp {
     public static void main(String[] args) {
-        Function<List<Integer>, IntSummaryStatistics> function = new Function<List<Integer>, IntSummaryStatistics>() {
+        Function<List<Integer>, IntSummaryStatistics> function = new Function<>() {
             @Override
             public IntSummaryStatistics apply(List<Integer> integers) {
                 long count = integers.size();
@@ -27,7 +27,7 @@ public class StreamApp {
             }
         };
 
-        List<Integer> list=new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(5);
         list.add(4);
         list.add(3);
