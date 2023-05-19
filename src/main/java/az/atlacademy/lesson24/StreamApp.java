@@ -1,5 +1,6 @@
 package az.atlacademy.lesson24;
 
+import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 import java.util.function.Function;
@@ -26,5 +27,18 @@ public class StreamApp {
             }
         };
 
+        List<Integer> list=new ArrayList<>();
+        list.add(5);
+        list.add(4);
+        list.add(3);
+        list.add(2);
+        list.add(1);
+        list.add(0);
+        IntSummaryStatistics apply = function.apply(list);
+        System.out.println(apply.getMax());
+        System.out.println(apply.getMin());
+        System.out.println(apply.getSum());
+        System.out.println(apply.getAverage());
+        System.out.println(apply.getCount());
     }
 }
