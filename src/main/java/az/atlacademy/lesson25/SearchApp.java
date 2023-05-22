@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class StringApp {
+public class SearchApp {
     public static void main(String[] args) {
         List<Integer> list=new ArrayList<>();
         list.add(5);
