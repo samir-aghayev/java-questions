@@ -12,8 +12,10 @@ public class SearchApp {
         list.add(4);
         list.add(3);
         list.add(2);
-        Integer search = search(list, 9);
+        Integer search = search(list, 5);
         System.out.println(search);
+        Integer search2 = search(list, 9);
+        System.out.println(search2);
 
     }
 
