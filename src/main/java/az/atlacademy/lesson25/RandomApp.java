@@ -5,7 +5,7 @@ import java.util.Random;
 import java.util.Set;
 import java.util.stream.Collectors;
 
-public class RndomApp {
+public class RandomApp {
     public static void main(String[] args) {
         List<Integer> evenNums = new Random()
                 .ints(20, 0, 100)
