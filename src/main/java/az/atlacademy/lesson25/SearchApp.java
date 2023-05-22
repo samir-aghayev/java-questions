@@ -7,7 +7,7 @@ import java.util.List;
 
 public class SearchApp {
     public static void main(String[] args) {
-        List<Integer> list=new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         list.add(5);
         list.add(4);
         list.add(3);
@@ -19,11 +19,11 @@ public class SearchApp {
 
     }
 
-    public static <T> T search(Collection<T> collection, T data) throws DataNotFoundException{
+    public static <T> T search(Collection<T> collection, T data) throws DataNotFoundException {
         if (collection.contains(data)) {
             return data;
         } else {
-           throw new DataNotFoundException("Date not found");
+            throw new DataNotFoundException("Date not found");
         }
     }
 }
