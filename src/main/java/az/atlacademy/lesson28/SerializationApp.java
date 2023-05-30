@@ -6,7 +6,7 @@ public class SerializationApp {
     public static final String RESOURCE = "src/main/java/az/atlacademy/module01/lesson19/resource/";
 
     public static void main(String[] args) {
-        Person rte = new Person(1, "RTE", "T");
+        Person rte = new Person( "RTE", "T");
 
         try (ObjectOutputStream oos = new ObjectOutputStream(
                 new BufferedOutputStream(new FileOutputStream(RESOURCE + "people.ser")))) {

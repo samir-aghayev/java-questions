@@ -1,28 +1,48 @@
 package az.atlacademy.lesson28;
 
-import com.fasterxml.jackson.xml.XmlMapper;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
-import java.io.IOException;
+import java.io.*;
 
 public class JsonPersonApp {
 
     public static void main(String[] args) {
-        Person rte = new Person(1, "RTE", "T");
+        String path = "src/main/java/az/atlacademy/lesson28/resources/b.txt";
+        Person rte = new Person("RTE", "T");
 
+        byte[] personBytes = jsonBytes(rte);
+
+        writerObjectToFile(path, personBytes);
+
+        Object object = readerObjectToFile(path);
+
+        if (object instanceof Person person) {
+            System.out.println(person);
+        }
+    }
+
+    private static byte[] jsonBytes(Person rte) {
+        ObjectMapper om = new ObjectMapper();
         try {
-            XmlMapper xmlMapper = new XmlMapper();
-            String rteJson = xmlMapper.writeValueAsString(rte);
-            System.out.println(rteJson);
+            return om.writeValueAsBytes(rte);
+        } catch (JsonProcessingException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void writerObjectToFile(String path, byte[] personBytes) {
+        try (ObjectOutputStream ous = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(path)))) {
+            ous.write(personBytes);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
 
-        try {
-            ObjectMapper objectMapper = new ObjectMapper();
-            String rteJson = objectMapper.writeValueAsString(rte);
-            System.out.println(rteJson);
-        } catch (IOException e) {
+    public static Object readerObjectToFile(String path) {
+        try (ObjectInputStream ois = new ObjectInputStream(new BufferedInputStream(new FileInputStream(path)))) {
+            return ois.readObject();
+        } catch (IOException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
     }
