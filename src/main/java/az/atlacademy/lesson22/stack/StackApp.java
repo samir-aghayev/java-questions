@@ -20,18 +20,20 @@ public class StackApp {
         System.out.println(stack);
     }
 
-    public static String doOperation() {
-        int random = (int) (Math.random() * Operation.values().length);
-        stack.add(Operation.values()[random]);
-        return stack.peek().toString();
+    public static Operation doOperation() {
+        stack.add(getRandomOperation());
+        return stack.peek();
     }
 
     public static Optional<Operation> ctrlZ() {
         if (!stack.isEmpty()) {
-            Operation operationEnum = stack.peek();
-            stack.poll();
-            return Optional.of(operationEnum);
+            return Optional.of(stack.removeLast());
         }
         return Optional.empty();
+    }
+
+    public static Operation getRandomOperation() {
+        int random = (int) (Math.random() * Operation.values().length);
+        return Operation.values()[random];
     }
 }

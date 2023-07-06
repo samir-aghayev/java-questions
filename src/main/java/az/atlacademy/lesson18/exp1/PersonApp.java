@@ -1,4 +1,4 @@
-package az.atlacademy.lesson18;
+package az.atlacademy.lesson18.exp1;
 
 import java.util.Arrays;
 import java.util.Comparator;
@@ -22,7 +22,7 @@ public class PersonApp {
             }
         });
         System.out.println(Arrays.toString(people));
-        Arrays.sort(people, (person1, person2) -> (Double.compare(person1.salary, person2.salary)));
+        Arrays.sort(people, Comparator.comparingDouble(person -> person.salary));
         System.out.println(Arrays.toString(people));
     }
 }

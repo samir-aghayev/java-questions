@@ -7,24 +7,21 @@ import java.util.function.Function;
 
 public class StreamApp {
     public static void main(String[] args) {
-        Function<List<Integer>, IntSummaryStatistics> function = new Function<>() {
-            @Override
-            public IntSummaryStatistics apply(List<Integer> integers) {
-                long count = integers.size();
-                int min = integers.get(0);
-                int max = integers.get(0);
-                long sum = integers.get(0);
-                for (int i = 0; i < count; i++) {
-                    if (min > integers.get(i)) {
-                        min = integers.get(i);
-                    }
-                    if (max < integers.get(i)) {
-                        max = integers.get(i);
-                    }
-                    sum += integers.get(i);
+        Function<List<Integer>, IntSummaryStatistics> function = integers -> {
+            long count = integers.size();
+            int min = integers.get(0);
+            int max = integers.get(0);
+            long sum = integers.get(0);
+            for (Integer integer : integers) {
+                if (min > integer) {
+                    min = integer;
                 }
-                return new IntSummaryStatistics(count, min, max, sum);
+                if (max < integer) {
+                    max = integer;
+                }
+                sum += integer;
             }
+            return new IntSummaryStatistics(count, min, max, sum);
         };
 
         List<Integer> list = new ArrayList<>();

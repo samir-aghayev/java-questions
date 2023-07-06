@@ -9,6 +9,9 @@ public class StreamApp2 {
         stringList.add("Java");
         stringList.add("Hello");
         stringList.add("World");
+        stringList
+                .stream()
+                .forEach(System.out::println);
 
         stringList
                 .stream()

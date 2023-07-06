@@ -4,8 +4,7 @@ import java.util.Arrays;
 import java.util.Optional;
 import java.util.Scanner;
 
-public class LinearSearchApp {
-
+public class LinearSearcApp2 {
     public static void main(String[] args) {
         Integer[] numbers = new Integer[15];
         for (int i = 0; i < numbers.length; i++) {
@@ -15,13 +14,13 @@ public class LinearSearchApp {
         System.out.println("Enter one integer: ");
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        Optional<Integer> integer = search(numbers, n);
-        System.out.println(integer.isEmpty());
+        Optional<Integer> optionalInteger = search(numbers, n);
+        System.out.println(optionalInteger);
     }
 
-    public static <T> Optional search(T[] a, T b) {
-        for (int i = 0; i < a.length; i++) {
-            if (a[i].equals(b)) {
+    public static <T> Optional<Integer> search(T[] numbers, T num) {
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i].equals(num)) {
                 return Optional.of(i);
             }
         }

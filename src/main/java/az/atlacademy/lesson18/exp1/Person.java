@@ -1,4 +1,4 @@
-package az.atlacademy.lesson18;
+package az.atlacademy.lesson18.exp1;
 
 public final class Person implements Comparable<Person> {
     public final int id;
