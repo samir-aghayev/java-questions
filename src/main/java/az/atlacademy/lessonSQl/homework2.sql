@@ -1,10 +1,10 @@
 CREATE TABLE Products
 (
-    product_id   SERIAL PRIMARY KEY,
-    name         VARCHAR(50),
-    price        DECIMAL,
-    quantity     INT,
-    descripotion VARCHAR(100)
+    product_id  SERIAL PRIMARY KEY,
+    name        VARCHAR(50),
+    price       DECIMAL,
+    quantity    INT,
+    description VARCHAR(100)
 );
 
 CREATE TABLE Categories
@@ -21,11 +21,10 @@ CREATE TABLE Customers
     customer_id  SERIAL PRIMARY KEY,
     first_name   VARCHAR(50),
     last_name    VARCHAR(50),
-    adress       VARCHAR(50),
+    address       VARCHAR(50),
     email        VARCHAR(50) CHECK ( email LIKE '%@gmail.com' ),
     phone_number DECIMAL(12)
 );
-
 
 
 CREATE TABLE Orders
@@ -56,7 +55,7 @@ VALUES ('Category 1'),
        ('Category 10');
 
 
-INSERT INTO Products (name, price, quantity, descripotion, category_id)
+INSERT INTO Products (name, price, quantity, description, category_id)
 VALUES ('Laptop', 1500.00, 10, 'High-performance laptop for professional use', 1),
        ('Smartphone', 999.99, 20, 'Flagship smartphone with advanced features', 1),
        ('Tablet', 599.99, 15, 'Portable tablet with a large display', 2),
@@ -69,7 +68,7 @@ VALUES ('Laptop', 1500.00, 10, 'High-performance laptop for professional use', 1
        ('3D Printer', 899.99, 7, 'Advanced 3D printer for rapid prototyping', 8);
 
 
-INSERT INTO Customers (first_name, last_name, adress, email, phone_number)
+INSERT INTO Customers (first_name, last_name, address, email, phone_number)
 VALUES ('John', 'Doe', '123 Main St', 'johndoe@gmail.com', 1234567890),
        ('Jane', 'Smith', '456 Elm St', 'janesmith@gmail.com', 9876543210),
        ('Michael', 'Johnson', '789 Oak St', 'michaeljohnson@gmail.com', 5678901234),
@@ -159,7 +158,7 @@ SET price=200.00
 WHERE product_id = 4;
 
 --Add a new product.
-INSERT INTO Products(name, price, quantity, descripotion, category_id)
+INSERT INTO Products(name, price, quantity, description, category_id)
 VALUES ('MACBOOK PRO', 8659.59, 300, 'Macbook pro 16 inch with M2 max chip', 1);
 
 --Delete a product by its ID.
