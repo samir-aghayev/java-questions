@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class JDBSApp {
+public class JDBCApp {
     public static final String getAllCustomers = "SELECT * FROM Customers;";
 
     public static void main(String[] args) {
